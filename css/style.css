@@ -23,6 +23,7 @@ header #nav {
     height: 70px;
     font-size: 24px;
     text-transform: capitalize;
+    padding-top: 15px;
 }
 header #nav ul { list-style: none; }
 header #nav li {
@@ -32,6 +33,7 @@ header #nav li {
 header #nav li a {
     color: #000;
     text-decoration: none;
+    font-weight: bold;
 }
 header #nav li a:hover { color: #2980b9; }
 
@@ -58,7 +60,7 @@ header #nav li a:hover { color: #2980b9; }
     border-radius: 10px;
     outline: none;
 }
-.grey-div { background: #fafafa; }
+.grey-div { background: #000; }
 .grey-div textarea {
     margin: 50px auto;
     width: 40%;
@@ -99,13 +101,13 @@ footer {
     height: 30px;
     overflow: hidden;
     padding: 15px 0 5px 0;
-    background: black;
-    color: white;
+    background: #fafafa;
+    color: #000;
     text-align: center;
     word-spacing: 2px;
     letter-spacing: -1px;
 }
 footer a {
-    color: #FFF;
+    color: #000;
     text-decoration: none;
 }
