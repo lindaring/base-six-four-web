@@ -10,17 +10,17 @@
                         </select>
                     </td>
                     <td>
-                        <textarea placeholder="Put what you want to encode here..." ng-model="stringToEncode"></textarea>
+                        <textarea placeholder="Put what you want to decode here..." ng-model="stringToProcess">asdsdf</textarea>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td id="process-button" colspan="3"><button ng-click="encodeBase64()">Encode</button></td>
+                    <td id="process-button" colspan="3"><button ng-click="encodeBase64()">Decode</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="base64-outer grey-div">
-            <textarea placeholder="Results displayed here..." disabled>{{encodedString.value}}</textarea>
+            <textarea placeholder="Results displayed here..." disabled>{{processedString.value}}</textarea>
     </div>
 </div>

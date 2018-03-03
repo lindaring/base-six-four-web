@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="base64App">
 <head>
-    <title>Guess Word</title>
+    <title>Base64 Encode | Base64 Encode Decode</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/logo2.gif" type="image/png" sizes="218x220" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -12,6 +12,7 @@
     <!-- GUI -->
     <div ng-include="'partials/header.html'"></div>
     <div ng-view></div>
+    <div ng-include="'partials/footer.html'"></div>
 
     <!-- Libraries -->
     <script src="js/libs/angularjs/angular.min.js"></script>
@@ -20,7 +21,9 @@
     <script src="js/app.js"></script>
     <!-- Services -->
     <script src="js/service/base64-service.js"></script>
+    <script src="js/service/general-service.js"></script>
     <!-- Controllers -->
     <script src="js/controller/base64-controller.js"></script>
+    <script src="js/controller/general-controller.js"></script>
 </body>
 </html>

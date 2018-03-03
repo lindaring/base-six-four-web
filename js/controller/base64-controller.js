@@ -2,19 +2,28 @@ app.controller('base64Controller', function ($scope, $location, base64Service) {
 
     $scope.charsetList = [];
     $scope.selectedCharset = [];
-    $scope.stringToEncode = "";
-    $scope.encodedString = {
+    $scope.stringToProcess = "";
+    $scope.processedString = {
         key: "",
         value: ""
     };
     $scope.selectedCharset = "";
 
     $scope.encodeBase64 = function () {
-        $scope.encodePromise = base64Service.encode($scope.stringToEncode, $scope.selectedCharset);
+        $scope.encodePromise = base64Service.encode($scope.stringToProcess, $scope.selectedCharset);
         $scope.encodePromise.then(function success(response) {
-            $scope.encodedString = response.data;
-        }).catch(function (data) {
+            $scope.processedString = response.data;
+        }).catch(function () {
             console.log("Base 64 controller :: Failed to encode string.");
+        });
+    };
+
+    $scope.decodeBase64 = function () {
+        $scope.decodePromise = base64Service.decode($scope.stringToProcess, $scope.selectedCharset);
+        $scope.decodePromise.then(function success(response) {
+            $scope.processedString = response.data;
+        }).catch(function () {
+            console.log("Base 64 controller :: Failed to decode string.");
         });
     };
 
@@ -24,7 +33,7 @@ app.controller('base64Controller', function ($scope, $location, base64Service) {
             $scope.charsetList = response.data;
             $scope.selectedCharset = response.data[0];
         }).catch(function () {
-            console.log("Base 64 controller :: Failed to encode string.");
+            console.log("Base 64 controller :: Failed to retrieve charset list.");
         });
     };
 

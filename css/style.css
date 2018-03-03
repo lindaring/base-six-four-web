@@ -1,4 +1,7 @@
-body { font-family: Calibri, Arial; }
+body {
+    font-family: Calibri, Arial;
+    font-weight: 300;
+}
 
 /*--------------------------*/
 
@@ -19,7 +22,6 @@ header #nav {
     margin: 10px 0 10px 50px;
     height: 70px;
     font-size: 24px;
-    font-weight: 300;
     text-transform: capitalize;
 }
 header #nav ul { list-style: none; }
@@ -81,7 +83,6 @@ header #nav li a:hover { color: #2980b9; }
     display: block;
     color: white;
     font-size: 18px;
-    font-weight: 300;
     margin: 0 0 5px 0;
 }
 #charset-list select {
@@ -91,3 +92,20 @@ header #nav li a:hover { color: #2980b9; }
     outline: none;
 }
 #charset-list select:focus { border: 1px solid red; }
+
+/*--------------------------*/
+
+footer {
+    height: 30px;
+    overflow: hidden;
+    padding: 15px 0 5px 0;
+    background: black;
+    color: white;
+    text-align: center;
+    word-spacing: 2px;
+    letter-spacing: -1px;
+}
+footer a {
+    color: #FFF;
+    text-decoration: none;
+}
