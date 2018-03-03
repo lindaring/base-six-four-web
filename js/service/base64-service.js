@@ -1,17 +1,24 @@
 app.factory('base64Service', function ($http, HOST, BASE64_ENDPOINT) {
 
     return {
-        getRandomList: function (limit) {
+        encode: function (string, charset) {
             var promise = $http({
                 method: 'GET',
-                url: HOST + BASE64_ENDPOINT + '/random/' + limit
+                url: HOST + BASE64_ENDPOINT + '/encode/' + string + '?charset=' + charset
             });
             return promise;
         },
-        getDefinition: function (wordId) {
+        decode: function (string, charset) {
             var promise = $http({
                 method: 'GET',
-                url: HOST + BASE64_ENDPOINT + '/' + wordId
+                url: HOST + BASE64_ENDPOINT + '/decode/' + string + '?charset=' + charset
+            });
+            return promise;
+        },
+        getCharsetList: function () {
+            var promise = $http({
+                method: 'GET',
+                url: HOST + BASE64_ENDPOINT + '/charset/list'
             });
             return promise;
         }

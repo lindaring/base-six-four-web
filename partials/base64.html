@@ -1,22 +1,26 @@
-<div class="base64-outer">
-    <table>
-        <tbody>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-                    <textarea placeholder="Put what you want to encode here..."></textarea>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td id="process-button" colspan="3"><button>Encode</button></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<div class="">
-
-</div>
-<div class="base64-outer grey-div">
-    <textarea  placeholder="Results displayed here..." disabled></textarea>
+<div ng-controller="base64Controller">
+    <div class="base64-outer">
+        <table>
+            <tbody>
+                <tr>
+                    <td id="charset-list">
+                        <label>Select<br />input<br />charset:</label>
+                        <select ng-model="selectedCharset">
+                            <option ng-repeat="charset in charsetList" value="{{charset}}">&nbsp;{{charset}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <textarea placeholder="Put what you want to encode here..." ng-model="stringToEncode"></textarea>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="process-button" colspan="3"><button ng-click="encodeBase64()">Encode</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="base64-outer grey-div">
+            <textarea placeholder="Results displayed here..." disabled>{{encodedString.value}}</textarea>
+    </div>
 </div>
